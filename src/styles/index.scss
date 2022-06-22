@@ -1,0 +1,16 @@
+/* _导入不需要 _,也不需要后缀名scss
+    scss@import规则不同于css，
+    scss的@import规则在生成css文件时就把相关文件导入进来。
+    这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载.
+*/
+//引入定义的所有变量
+@import './variables/index';
+
+//初始化css
+@import 'reboot';
+
+//scss mixin
+@import './variables/mixin';
+
+//引入button
+@import 'src/components/Button/style';

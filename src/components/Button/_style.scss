@@ -1,0 +1,110 @@
+//基本的btn属性
+.btn {
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $line-height-base;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width
+    solid
+    transparent;
+  box-shadow: $btn-box-shadow;
+  cursor: pointer; //鼠标样式
+  transition: $btn-transition; //动画
+
+  //button点击时候的动画
+  &:active {
+    transform: $btn-focus-transition;
+  }
+
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-y,
+    $btn-font-size,
+    $btn-border-radius
+  );
+
+  //添加disabled 状态的样式
+  //由于a标签没有disabled属性，因此添加一个disabled类
+  //button标签有disabled属性，因此使用button的disabled属性。
+  .disabled,
+  &[disabled] {
+    transform: none;
+    cursor: not-allowed; //鼠标样式 改为禁止
+    opacity: $btn-disabled-opacity; //改变透明度
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.btn-lg {
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-y-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
+  );
+}
+
+.btn-sm {
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-y-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
+  );
+}
+
+.btn-primary {
+  @include button-style(
+    $primary,
+    $primary,
+    $white
+  );
+}
+
+.btn-danger {
+  @include button-style(
+    $danger,
+    $danger,
+    $white
+  );
+}
+.btn-default {
+  @include button-style(
+    $default,
+    $gray-400,
+    $body-color,
+    $white,
+    $primary
+  );
+}
+
+.btn-link {
+  font-weight: $font-weight-base;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+  &:hover {
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+  }
+  &:focus {
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+  }
+  &:hover {
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+}

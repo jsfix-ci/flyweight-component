@@ -1,0 +1,58 @@
+//中性色：指由黑色、白色及由黑白调和的各种深浅不同的灰色系列
+$gray-100: #f8f9fa !default; //   !default  sass提供的特性。当用户定义这个属性，以用户的为准。
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+//功能色板：描述状态。
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #fadb14 !default;
+$green: #52c41a !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$white: #fff !default;
+
+//系统色板
+$primary: #604df2 !default; //主产品色
+$secondary: #357bc9; //次产品色
+//功能色板
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$default: $gray-100 !default;
+
+//相当于定义了一个map对象。 用于@each 遍历。
+$theme-colors: (
+  'primary':
+    $primary,
+  'secondary':
+    $secondary,
+  'success':
+    $success,
+  'info':
+    $info,
+  'warning':
+    $warning,
+  'danger':
+    $danger,
+  'light':
+    $light,
+  'dark':
+    $dark
+    'default'
+    $default,
+);
