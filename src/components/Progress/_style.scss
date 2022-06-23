@@ -1,0 +1,34 @@
+.fw-progress-wrap {
+  margin: 3px 3px;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+
+  .fw-progress-bar {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background-color: $gray-400;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .fw-progress-inner-bar {
+      position: absolute;
+      display: flex;
+      flex-direction: row-reverse;
+      height: 100%;
+
+      .fw-inner-text {
+        position: absolute;
+        right: 30px;
+        font-size: 14px;
+        margin-top: -4px;
+        color: white;
+      }
+      .less-then {
+        right: -30px;
+        color: #000;
+      }
+    }
+  }
+}

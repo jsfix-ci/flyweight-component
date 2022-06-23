@@ -4,3 +4,38 @@ $border-color: $gray-300 !default;
 $border-radius-lg: 0.7rem !default;
 $border-radius-md: 0.4rem !default;
 $border-radius-sm: 0.35rem !default;
+
+.color-primary {
+  background-color: $blue;
+  color: white;
+}
+.color-secondary {
+  background-color: $secondary;
+  color: white;
+}
+.color-default {
+  background-color: $default;
+}
+.color-danger {
+  background-color: $danger;
+  color: white;
+}
+.color-warning {
+  background-color: $warning;
+  color: white;
+}
+.color-success {
+  background-color: $success;
+  color: white;
+}
+.color-info {
+  background-color: $info;
+  color: white;
+}
+.color-light {
+  background-color: $light;
+}
+.color-dark {
+  background-color: $dark;
+  color: white;
+}

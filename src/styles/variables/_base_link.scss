@@ -1,8 +1,5 @@
 //链接样式
 $link-color: $primary !default;
 $link-decoration: none !default; //取消下划线
-$link-hover-color: darken(
-  $link-color,
-  15%
-) !default; //darken()  scss处理函数,将颜色变暗
+$link-hover-color: darken($link-color, 15%) !default; //darken()  scss处理函数,将颜色变暗
 $link-hover-decoration: underline !default;

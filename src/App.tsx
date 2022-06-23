@@ -1,44 +1,19 @@
-import Button from 'src/components/Button/';
 import React from 'react';
-
+import Alert from './components/Alert';
 function App() {
   return (
     <div
       className="App"
       style={{
-        marginLeft:
-          '20px',
-        display:
-          'flex',
-        justifyContent:
-          'space-around',
-        alignContent:
-          'center',
-        alignItems:
-          'center',
+        marginLeft: '20px',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignContent: 'center',
+        alignItems: 'center',
       }}
     >
-      <h1>
-        tes
-      </h1>
-      <Button
-        size="lg"
-        type="danger"
-      >
-        默认
-      </Button>
-      <Button
-        size="sm"
-        type="danger"
-      >
-        默认
-      </Button>
-      <Button
-        size="md"
-        type="danger"
-      >
-        默认
-      </Button>
+      <h1>tes</h1>
+      <Alert type="success" hiddenTime={2000}></Alert>
     </div>
   );
 }

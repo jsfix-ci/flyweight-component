@@ -1,5 +1,5 @@
 //基本的btn属性
-.btn {
+.fw-btn {
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -7,9 +7,7 @@
   white-space: nowrap;
   vertical-align: middle;
   background-image: none;
-  border: $btn-border-width
-    solid
-    transparent;
+  border: $btn-border-width solid transparent;
   box-shadow: $btn-box-shadow;
   cursor: pointer; //鼠标样式
   transition: $btn-transition; //动画
@@ -19,12 +17,7 @@
     transform: $btn-focus-transition;
   }
 
-  @include button-size(
-    $btn-padding-y,
-    $btn-padding-y,
-    $btn-font-size,
-    $btn-border-radius
-  );
+  @include button-size($btn-padding-y, $btn-padding-y, $btn-font-size, $btn-border-radius);
 
   //添加disabled 状态的样式
   //由于a标签没有disabled属性，因此添加一个disabled类
@@ -41,50 +34,26 @@
   }
 }
 
-.btn-lg {
-  @include button-size(
-    $btn-padding-y-lg,
-    $btn-padding-y-lg,
-    $btn-font-size-lg,
-    $btn-border-radius-lg
-  );
+.fw-btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg);
 }
 
-.btn-sm {
-  @include button-size(
-    $btn-padding-y-sm,
-    $btn-padding-y-sm,
-    $btn-font-size-sm,
-    $btn-border-radius-sm
-  );
+.fw-btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-y-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }
 
-.btn-primary {
-  @include button-style(
-    $primary,
-    $primary,
-    $white
-  );
+.fw-btn-primary {
+  @include button-style($primary, $primary, $white);
 }
 
-.btn-danger {
-  @include button-style(
-    $danger,
-    $danger,
-    $white
-  );
+.fw-btn-danger {
+  @include button-style($danger, $danger, $white);
 }
-.btn-default {
-  @include button-style(
-    $default,
-    $gray-400,
-    $body-color,
-    $white,
-    $primary
-  );
+.fw-btn-default {
+  @include button-style($default, $gray-400, $body-color, $white, $primary);
 }
 
-.btn-link {
+.fw-btn-link {
   font-weight: $font-weight-base;
   color: $btn-link-color;
   text-decoration: $link-decoration;

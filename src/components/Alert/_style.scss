@@ -1,0 +1,47 @@
+.fw-alert {
+  z-index: 100px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  min-height: 40px;
+  min-width: 300px;
+  transform: translate(-50%, 0);
+  padding: 5px 30px 5px 10px;
+  margin-bottom: 16px;
+  border-radius: 3px;
+  &.fw-success {
+    background-color: #f6ffed;
+    border: 1px solid $success;
+  }
+  &.fw-info {
+    background-color: #e6f7ff;
+    border: 1px solid $info;
+  }
+  &.fw-warning {
+    background-color: #fffbe6;
+    border: 1px solid $warning;
+  }
+  &.fw-error {
+    background-color: #fff1f0;
+    border: 1px solid $danger;
+  }
+
+  .fw-alert-message {
+    font-size: 20px;
+    overflow: hidden; // 溢出隐藏
+    text-overflow: ellipsis; // 溢出用省略号显示
+    white-space: nowrap; // 规定段落中的文本不进行换行
+  }
+  .fw-alert-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}

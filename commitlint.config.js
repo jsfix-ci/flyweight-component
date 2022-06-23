@@ -1,8 +1,4 @@
 //eslint-disable-next-line
-module.exports =
-  {
-    extends:
-      [
-        '@commitlint/config-conventional',
-      ],
-  };
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+};

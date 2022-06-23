@@ -37,22 +37,12 @@ $default: $gray-100 !default;
 
 //相当于定义了一个map对象。 用于@each 遍历。
 $theme-colors: (
-  'primary':
-    $primary,
-  'secondary':
-    $secondary,
-  'success':
-    $success,
-  'info':
-    $info,
-  'warning':
-    $warning,
-  'danger':
-    $danger,
-  'light':
-    $light,
-  'dark':
-    $dark
-    'default'
-    $default,
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark 'default' $default,
 );

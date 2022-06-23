@@ -1,0 +1,41 @@
+.fw-tag {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  min-width: 40px;
+  min-height: 30px;
+  border-radius: 5px;
+  vertical-align: center;
+  text-align: center;
+  margin-left: 10px;
+}
+.fw-tag-close {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 100%;
+}
+
+.fw-tag-content {
+  display: inline-block;
+  height: 100%;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.fw-tag-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
+.fw-tag-md {
+  @include button-size($btn-padding-y, $btn-padding-y, $btn-font-size, $btn-border-radius);
+}
+
+.fw-tag-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-y-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
