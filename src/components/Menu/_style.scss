@@ -1,0 +1,134 @@
+.fw-menu {
+  display: flex;
+  flex-wrap: wrap; //不换行
+  padding-left: 0px;
+  margin: 0 0;
+  list-style: none;
+  ul {
+    padding: 0px;
+    list-style: none; // li 标签不加上点
+  }
+
+  //menu-item类的公共属性
+  > .menu-item {
+    cursor: pointer;
+    &:hover,
+    &focus {
+      //悬浮聚焦时候的动画
+      color: $secondary;
+    }
+    &.is-disabled {
+      //是否可以点击
+      // pointer-events: none; 阻止所有的点击事件。
+      cursor: not-allowed;
+      color: $menu-item-disabled-color;
+    }
+    &.is-active {
+      color: $menu-item-active-color;
+    }
+  }
+
+  //submenu 公共属性
+  .submenu {
+    padding-left: 0;
+    white-space: nowrap; //不换行
+
+    .submenu-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      .submenu-icon {
+        margin-left: 10px;
+        display: flex;
+      }
+    }
+
+    .submenu-panel {
+      .submenu-item {
+        padding: $menu-item-padding-y $menu-item-padding-x;
+      }
+    }
+  }
+}
+
+//menu是垂直的情况。-----------------------------------------------------
+//同时拥有  .menu  和.menu-horizontal类的属性
+.fw-menu-vertical {
+  border: 0px;
+  box-shadow: 0 2px 3px 2px gray;
+  flex-direction: column;
+  //menu下的每一项
+  .menu-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    border-left: $menu-item-active-border-width solid transparent;
+    &.is-active {
+      border-left: $menu-item-active-border-width solid $menu-item-active-color;
+    }
+  }
+  .submenu {
+    .submenu-title {
+      &:hover {
+        .submenu-icon {
+          transform: rotate(180deg);
+          transition: transform 0.25s ease-in-out;
+        }
+      }
+    }
+    .submenu-item {
+      border-left: $menu-item-active-border-width solid transparent;
+      &.is-active {
+        border-left: $menu-item-active-border-width solid $menu-item-active-color;
+      }
+    }
+  }
+}
+
+//menu是水平的情况。-----------------------------------------------------
+.fw-menu-horizontal {
+  border: 0px;
+  box-shadow: 0 2px 3px 2px gray;
+  .menu-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    margin: 0px 5px;
+    border-bottom: $menu-item-active-border-width solid transparent;
+    &.is-active {
+      border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+    }
+  }
+
+  .submenu {
+    &:hover {
+      .submenu-icon {
+        transform: rotate(180deg);
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+    position: relative;
+    .submenu-title {
+      &:focus {
+        .submenu-icon {
+          transform: rotate(180deg);
+          transition: transform 0.25s ease-in-out;
+        }
+      }
+    }
+
+    .submenu-panel {
+      position: absolute;
+      background: $white;
+      z-index: 100; //最顶层。
+      left: 0;
+      border: $menu-border-width solid $menu-border-color;
+      box-shadow: $submenu-box-shadow;
+      .submenu-item {
+        border-bottom: $menu-item-active-border-width solid transparent;
+        &.is-active {
+          border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        }
+      }
+    }
+  }
+}
+.hidden {
+  display: none;
+}

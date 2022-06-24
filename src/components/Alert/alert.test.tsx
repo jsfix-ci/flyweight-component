@@ -1,10 +1,6 @@
 import React from 'react';
-import Alert, { AlertPropsInterface } from './alert';
-import { fireEvent, render } from '@testing-library/react';
-
-const fnProps = {
-  onClick: jest.fn(),
-};
+import Alert from './alert';
+import { render } from '@testing-library/react';
 
 describe('test Alert components', () => {
   //是否正确渲染了class类
