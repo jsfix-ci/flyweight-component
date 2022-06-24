@@ -30,7 +30,7 @@ IconWithSize.storyName = 'size';
 IconWithSize.parameters = {
   docs: {
     description: {
-      story: 'Some story **markdown**',
+      story: 'size属性，控制icon大小',
     },
   },
 };
@@ -44,11 +44,11 @@ export const IconWithType: ComponentStory<typeof Icon> = () => (
     <Icon icon={'phone'} theme="secondary" style={{ marginLeft: '10px' }}></Icon>
   </>
 );
-IconWithType.storyName = 'size';
+IconWithType.storyName = 'theme';
 IconWithType.parameters = {
   docs: {
     description: {
-      story: 'Some story **markdown**',
+      story: 'theme属性，控制icon主题',
     },
   },
 };

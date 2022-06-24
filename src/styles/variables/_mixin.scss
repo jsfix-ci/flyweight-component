@@ -58,5 +58,5 @@
 
 @mixin input-size($padding-y, $padding-x, $font-size) {
   padding: $padding-y $padding-x;
-  $font-size: $font-size;
+  font-size: $font-size;
 }

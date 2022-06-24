@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Progress from './progress';
 
 //默认导出文件
@@ -12,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof Progress> = (args) => <Progress {...args} />;
 export const DefaultProgress = Template.bind({});
 DefaultProgress.args = { percent: 100, theme: 'primary' };
-DefaultProgress.storyName = '默认按钮示例';
+DefaultProgress.storyName = 'default';
 
 export const ProgressWithTheme: ComponentStory<typeof Progress> = () => (
   <>
@@ -25,7 +24,7 @@ export const ProgressWithTheme: ComponentStory<typeof Progress> = () => (
     <Progress percent={50} theme={'dark'}></Progress>
   </>
 );
-ProgressWithTheme.storyName = '不同theme的进度条';
+ProgressWithTheme.storyName = 'theme';
 ProgressWithTheme.parameters = {
   docs: {
     description: {

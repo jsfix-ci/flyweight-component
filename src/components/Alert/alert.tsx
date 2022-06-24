@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps, useEffect, useState, useRef, HTMLAttributes } from 'react';
+import React, { FC, useEffect, useState, useRef, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 export interface AlertPropsInterface extends HTMLAttributes<HTMLElement> {

@@ -1,5 +1,7 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import classnames from 'classnames';
 import React, { FC, ReactNode, useState } from 'react';
+import Icon from '../Icon';
 
 export interface TagPropsInterface {
   /** 是否可以关闭 */
@@ -9,7 +11,7 @@ export interface TagPropsInterface {
   /** 标签的颜色,不设置则为默认颜色*/
   theme?: 'primary' | 'secondary' | 'default' | 'danger' | 'info' | 'success' | 'warning' | 'light' | 'dark';
   /** 图标*/
-  icon?: 'string';
+  icon?: IconProp;
   /** 图标尺寸大小*/
   size?: 'lg' | 'md' | 'sm';
   /** 子元素*/
@@ -21,7 +23,6 @@ export const Tag: FC<TagPropsInterface> = ({
   children,
   onClose,
   theme = 'primary',
-  // todo
   icon,
   size = 'md',
   ...resProps
@@ -34,13 +35,14 @@ export const Tag: FC<TagPropsInterface> = ({
   const classes = classnames(`fw-tag fw-bg-color-${theme}`, {
     hidden: isHidden,
   });
-  console.log(isHidden);
+
   return (
     <div className={classes} {...resProps}>
+      {icon && <Icon icon={icon} className={`fw-tag-icon`}></Icon>}
       <div className={`fw-tag-content fw-tag-${size}`}> {children}</div>
       {closeable && (
         <span className={`fw-tag-close`} onClick={handleClose}>
-          x
+          <Icon icon={'xmark'}></Icon>
         </span>
       )}
     </div>

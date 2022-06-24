@@ -13,7 +13,7 @@ export const DefaultTag = Template.bind({});
 DefaultTag.args = {
   children: '默认标签',
 };
-DefaultTag.storyName = '默认按钮示例';
+DefaultTag.storyName = 'default';
 
 //2.定义不同size的故事
 export const TagWithSize: ComponentStory<typeof Tag> = () => (
@@ -23,7 +23,7 @@ export const TagWithSize: ComponentStory<typeof Tag> = () => (
     <Tag size="sm">small</Tag>
   </>
 );
-TagWithSize.storyName = '不同大小按钮';
+TagWithSize.storyName = 'size';
 TagWithSize.parameters = {
   docs: {
     description: {
@@ -45,11 +45,28 @@ export const TagWithType: ComponentStory<typeof Tag> = () => (
     <Tag theme="dark">dark</Tag>
   </>
 );
-TagWithType.storyName = '不同类型的按钮';
+TagWithType.storyName = 'theme';
 TagWithType.parameters = {
   docs: {
     description: {
-      story: 'Some story **markdown**',
+      story: 'tag主题',
+    },
+  },
+};
+
+//3. 带有图标的tag标签
+export const TagWithIcon: ComponentStory<typeof Tag> = () => (
+  <>
+    <Tag theme="primary" icon={'anchor'}>
+      primary
+    </Tag>
+  </>
+);
+TagWithIcon.storyName = 'icon';
+TagWithIcon.parameters = {
+  docs: {
+    description: {
+      story: '使用icon图标',
     },
   },
 };

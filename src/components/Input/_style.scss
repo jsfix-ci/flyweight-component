@@ -1,0 +1,61 @@
+.fw-input-wrap {
+  display: flex;
+  margin: 10px 10px;
+  align-items: stretch;
+  &.is-active {
+    outline: $primary 1px solid;
+    box-shadow: 1px 1px 3px 3px $primary 1px 1px 3px 3px $primary;
+  }
+
+  .fw-input-prepend {
+    padding: 0 8px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+    border-right: none;
+    background-color: #eee;
+  }
+  .fw-input-content {
+    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+    display: flex;
+    align-items: center;
+    flex: 1;
+    .fw-input-input {
+      flex-grow: 1;
+      border: none;
+      box-sizing: border-box;
+      height: 100%;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    .fw-input-icon {
+      padding: 0 8px;
+    }
+    .initialize-color {
+      color: $gray-500;
+    }
+  }
+
+  .fw-input-append {
+    padding: 0 8px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+    border-left: none;
+    background-color: #eee;
+  }
+  .fw-input-size-lg {
+    @include input-size($input-padding-y-lg, $input-padding-x-lg, $font-size-lg);
+  }
+
+  .fw-input-size-md {
+    @include input-size($input-padding-y-md, $input-padding-x-md, $font-size-md);
+  }
+
+  .fw-input-size-sm {
+    @include input-size($input-padding-y-sm, $input-padding-x-sm, $font-size-sm);
+  }
+}
+
+.fw-disabled {
+  cursor: not-allowed;
+  opacity: $btn-disabled-opacity; //改变透明度
+}
