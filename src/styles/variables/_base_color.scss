@@ -46,3 +46,66 @@ $theme-colors: (
   'light': $light,
   'dark': $dark 'default' $default,
 );
+
+.fw-bg-color-primary {
+  background-color: $blue;
+  color: white;
+}
+.fw-bg-color-secondary {
+  background-color: $secondary;
+  color: white;
+}
+.fw-bg-color-default {
+  background-color: $default;
+}
+.fw-bg-color-danger {
+  background-color: $danger;
+  color: white;
+}
+.fw-bg-color-warning {
+  background-color: $warning;
+  color: white;
+}
+.fw-bg-color-success {
+  background-color: $success;
+  color: white;
+}
+.fw-bg-color-info {
+  background-color: $info;
+  color: white;
+}
+.fw-bg-color-light {
+  background-color: $light;
+}
+.fw-bg-color-dark {
+  background-color: $dark;
+  color: white;
+}
+
+.fw-color-primary {
+  color: $blue;
+}
+.fw-color-secondary {
+  color: $secondary;
+}
+.fw-color-default {
+  color: $default;
+}
+.fw-color-danger {
+  color: $danger;
+}
+.fw-bg-color-warning {
+  color: $warning;
+}
+.fw-bg-color-success {
+  color: $success;
+}
+.fw-bg-color-info {
+  color: $info;
+}
+.fw-bg-color-light {
+  color: $light;
+}
+.fw-bg-color-dark {
+  color: $dark;
+}

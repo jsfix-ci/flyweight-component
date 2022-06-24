@@ -9,16 +9,16 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
+//1.默认模板
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
 export const DefaultButton = Template.bind({});
 DefaultButton.args = {
   type: 'default', //传入的参数
   children: '默认按钮',
 };
-DefaultButton.storyName = '默认按钮示例';
+DefaultButton.storyName = 'default';
 
-//2.定义不同size的故事
+//2.不同size展示
 export const ButtonWithSize: ComponentStory<typeof Button> = () => (
   <>
     <Button onClick={action('clicked')} size="lg">
@@ -32,11 +32,11 @@ export const ButtonWithSize: ComponentStory<typeof Button> = () => (
     </Button>
   </>
 );
-ButtonWithSize.storyName = '不同大小按钮';
+ButtonWithSize.storyName = 'size';
 ButtonWithSize.parameters = {
   docs: {
     description: {
-      story: 'Some story **markdown**',
+      story: 'size属性',
     },
   },
 };
@@ -58,7 +58,7 @@ export const ButtonWithType: ComponentStory<typeof Button> = () => (
     </Button>
   </>
 );
-ButtonWithType.storyName = '不同类型按钮';
+ButtonWithType.storyName = 'type';
 
 //4.定义disabled按钮
 export const ButtonWithDisabled = () => (
@@ -71,4 +71,4 @@ export const ButtonWithDisabled = () => (
     </Button>
   </>
 );
-ButtonWithDisabled.storyName = '禁用按钮';
+ButtonWithDisabled.storyName = 'disabled';

@@ -9,11 +9,10 @@ export default {
   component: Progress,
 } as ComponentMeta<typeof Progress>;
 
-export const ProgressDefault: ComponentStory<typeof Progress> = () => (
-  <>
-    <Progress percent={100} theme={'primary'}></Progress>
-  </>
-);
+const Template: ComponentStory<typeof Progress> = (args) => <Progress {...args} />;
+export const DefaultProgress = Template.bind({});
+DefaultProgress.args = { percent: 100, theme: 'primary' };
+DefaultProgress.storyName = '默认按钮示例';
 
 export const ProgressWithTheme: ComponentStory<typeof Progress> = () => (
   <>

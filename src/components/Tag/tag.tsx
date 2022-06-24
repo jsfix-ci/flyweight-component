@@ -31,7 +31,7 @@ export const Tag: FC<TagPropsInterface> = ({
     onClose && onClose(e);
     setHidden(true);
   };
-  const classes = classnames(`fw-tag color-${theme}`, {
+  const classes = classnames(`fw-tag fw-bg-color-${theme}`, {
     hidden: isHidden,
   });
   console.log(isHidden);

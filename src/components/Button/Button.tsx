@@ -17,7 +17,7 @@ export interface ButtonPropsInterface
   onClick?: (event: React.MouseEvent) => void;
 }
 
-/** Button 组件描述: 按钮用于开始一个即时操作。 */
+/** Button 组件描述: 按钮用于开始一个即时操作。 页面中最常用的的按钮元素，适合于完成特定的交互，支持 HTML button 和 a 链接 的所有属性*/
 export const Button: React.FC<ButtonPropsInterface> = ({
   size = 'md',
   type = 'default',
