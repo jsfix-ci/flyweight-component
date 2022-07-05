@@ -67,11 +67,13 @@
   }
   .submenu {
     .submenu-title {
-      &:hover {
-        .submenu-icon {
-          transform: rotate(180deg);
-          transition: transform 0.25s ease-in-out;
-        }
+      .submenu-icon {
+        transition: transform 0.25s ease-in-out;
+        transform: rotate(180deg);
+      }
+      .is-open {
+        transition: transform 0.25s ease-in-out;
+        transform: rotate(0deg);
       }
     }
     .submenu-item {
@@ -129,6 +131,19 @@
     }
   }
 }
-.hidden {
-  display: none;
+
+.fw-animation-enter {
+  opacity: 0;
+}
+
+.fw-animation-enter-active {
+  opacity: 1;
+  transition: opacity 1000 cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+}
+.fw-animation-exit {
+  opacity: 1;
+}
+.fw-animation-exit-active {
+  opacity: 0;
+  transition: opacity 1000 cubic-bezier(0.23, 1, 0.32, 1) 100ms;
 }

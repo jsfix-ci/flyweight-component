@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { MenuContext } from '../menu';
 import { MenuItemPropsInterface } from '../MenuItem/menuItem';
 import Icon from '../../Icon/icon';
-
+import Transition from 'src/components/Transition/transition';
 export interface SubMenuPropsInterface extends Partial<React.HTMLAttributes<HTMLElement>> {
   /** subMenu的索引 */
   index?: React.Key;
@@ -60,11 +60,7 @@ const SubMenu: React.FC<SubMenuPropsInterface> = ({ index, title, children, clas
     'is-disabled': disabled,
   });
 
-  //绝对定位面板css类名 控制是否
-  const subMenuPanelClass = classNames('submenu-panel', {
-    hidden: subMenuHidden && !disabled,
-  });
-
+  const iconClass = classNames('submenu-icon', { 'is-open': subMenuHidden });
   const repeatMap = new Map();
   //渲染孩子节点
   const renderChildren = () => {
@@ -86,7 +82,11 @@ const SubMenu: React.FC<SubMenuPropsInterface> = ({ index, title, children, clas
         console.error('warning:subMenu children must be MenuItem');
       }
     });
-    return <ul className={subMenuPanelClass}>{childrenComponent}</ul>;
+    return (
+      <Transition in={!subMenuHidden} timeout={300} unmountOnExit appear>
+        <ul className={'submenu-panel'}>{childrenComponent}</ul>
+      </Transition>
+    );
   };
 
   return (
@@ -95,7 +95,7 @@ const SubMenu: React.FC<SubMenuPropsInterface> = ({ index, title, children, clas
         {/*占据 menu-item的标题*/}
         <div className="submenu-title" {...clickEvent}>
           {title}
-          <Icon icon="angle-down" className="submenu-icon"></Icon>
+          <Icon icon="angle-down" className={iconClass}></Icon>
         </div>
         {/* 相对定位的子面板 */}
         {renderChildren()}
