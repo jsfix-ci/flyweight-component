@@ -1,0 +1,22 @@
+.fw-auto-complete {
+  width: 500px;
+  .fw-auto-complete-input {
+    width: 100%;
+  }
+  .fw-auto-complete-result {
+    margin: 0px;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+  }
+  .fw-auto-complete-item {
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+  .fw-auto-complete-result-height {
+    background-color: $primary;
+    color: $white;
+  }
+}

@@ -1,0 +1,25 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import AutoComplete, { DataSourceType } from './AutoCompleteInput';
+
+const SimpleComplete = () => {
+  const data = ['Almond', 'Apple ', 'Apricot', 'Avocado', 'Arbutus', 'Banana ', 'Berry '];
+
+  const renderOption = (item: DataSourceType) => {
+    return item.value;
+  };
+
+  const handleFetch = (query: string) => {
+    let res: { value: string }[];
+    const temp = data.filter((name) => name.toLowerCase().includes(query.toLowerCase()));
+    res = temp.map((item) => {
+      return { value: item };
+    });
+    return res;
+  };
+
+  return <AutoComplete fetchSuggestions={handleFetch} onSelect={action('selected')} renderOption={renderOption} />;
+};
+
+storiesOf(' AutoComplete', module).add(' AutoComplete ', SimpleComplete);

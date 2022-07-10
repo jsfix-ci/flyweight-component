@@ -1,0 +1,16 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import AutoComplete, { DataSourceType } from './AutoCompleteInput';
+
+const SimpleComplete = () => {
+  const data = ['Almond', 'Apple ', 'Apricot', 'Avocado', 'Arbutus', 'Banana ', 'Berry '];
+  const data2 = data.map((item) => {
+    return { value: item };
+  });
+  console.log(data2);
+
+  return <AutoComplete option={data2} />;
+};
+
+storiesOf(' AutoComplete', module).add(' AutoComplete ', SimpleComplete);

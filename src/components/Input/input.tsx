@@ -1,7 +1,9 @@
-import React, { ReactElement, FC, ChangeEvent, useState } from 'react';
+import React, { ReactElement, FC, ChangeEvent, useState, useEffect } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import classNames from 'classnames';
 import Icon from '../Icon/icon';
+
+// bug 如果同时写了value 和defaultValue将会无法修改value
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLElement>, 'size'> {
   /** 输入值*/
@@ -25,10 +27,13 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLElement>,
   defaultValue?: string;
 }
 
+//tips: 当组件中同时拥有value和defaultValue时，会出现受控组件和非受控组件的错误。
+
 /** input 通过鼠标或键盘输入内容，表单域的包装。*/
 export const Input: FC<InputProps> = ({
   defaultValue = '',
   disabled = false,
+  value = '',
   size = 'md',
   icon,
   prepend,
@@ -39,7 +44,12 @@ export const Input: FC<InputProps> = ({
 }) => {
   const [isFocus, setFocus] = useState(false);
 
-  const [value, setValue] = useState(defaultValue);
+  //bug 如果外部又是一个受控组件，则外部的值不会改变输入框的值，只是在第一次会修改。
+  const [controlledValue, setControlledValue] = useState(value || defaultValue);
+
+  useEffect(() => {
+    setControlledValue(value);
+  }, [value]);
 
   const [init, setInit] = useState(true);
 
@@ -53,7 +63,7 @@ export const Input: FC<InputProps> = ({
   };
 
   const inputOnChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value.trim());
+    setControlledValue(e.target.value.trim());
   };
 
   const wrapClasses = classNames('fw-input-wrap', className, {
@@ -96,7 +106,7 @@ export const Input: FC<InputProps> = ({
           }}
           placeholder={placeholder}
           type="text"
-          value={value}
+          value={controlledValue}
           disabled={disabled}
           // 处理受控组件与非受控组件之间冲突报错。
           {...resProps}
